@@ -6,42 +6,37 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class MainFrame extends JFrame implements ActionListener{
-	
+public class MainFrame extends JFrame implements ActionListener {
+
 	private JButton loadingButton;
-	
+
 	private static final long serialVersionUID = 1L;
 
-	public MainFrame() throws IOException{
-		
+	public MainFrame() throws IOException {
+
 		JPanel panel = new JPanel();
-		JFrame f = new JFrame("POID_1_SVN, Nawrocki, Konopka");
-		
+		JFrame f = new JFrame("POID Koz³owicz, Kucemba, Ordon, Tomczak");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		f.setSize(400, 200);
+		f.setSize(600, 200);
 		setLocationRelativeTo(null);
-				
+
 		loadingButton = new JButton("Wczytaj obrazek");
 		loadingButton.addActionListener(this);
-		loadingButton.setFont(new Font("Calibri",Font.PLAIN,25));
-		
-	
-		f.setLocationRelativeTo(null);	
+		loadingButton.setFont(new Font("Calibri", Font.PLAIN, 25));
+
+		f.setLocationRelativeTo(null);
 		panel.add(loadingButton);
-		f.add(panel);	
-	    pack();
+		f.add(panel);
+		pack();
 
-	    f.setVisible(true);
+		f.setVisible(true);
 	}
-	
-	public void actionPerformed(ActionEvent evt){
+
+	public void actionPerformed(ActionEvent evt) {
 		Object source = evt.getSource();
-		
-		if(source == loadingButton)
-		{		
-				new Obraz();			
-		}	
-		
-	}
 
+		if (source == loadingButton) {
+			new Obraz();
+		}
+	}
 }
