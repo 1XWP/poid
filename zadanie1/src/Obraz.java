@@ -47,10 +47,10 @@ public class Obraz extends JFrame implements ActionListener {
 
 	boolean DP, GP;
 
-	private JButton negativeButton, resetButton, arithmeticButton, saveButton, contrastButton, histogramButton,
-	lightenButton, filterO3, filterS6, medianButton, h3Button, histogramButton2; 	
+	private JButton negativeButton, resetButton, arithmeticButton, saveButton, contrastButton, 
+	histogramButton,lightenButton, filterO3, filterS6, medianButton, h3Button, histogramButton2; 	
 
-	private JTextField arithmeticF, medianF, splotF, DPF, GPF, PZF1, PZF2, EDF1, EDF2, EDF3, segmentationF;
+	private JTextField arithmeticF, medianF, splotF;
 
 	int[] R = new int[256];
 	int[] G = new int[256];
