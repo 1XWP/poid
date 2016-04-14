@@ -1,16 +1,10 @@
 import java.awt.FileDialog;
-import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Random;
 import javax.imageio.ImageIO;
 import javax.swing.Icon;
@@ -47,8 +41,8 @@ public class Obraz extends JFrame implements ActionListener {
 
 	boolean DP, GP;
 
-	private JButton negativeButton, resetButton, arithmeticButton, saveButton, contrastButton, 
-	histogramButton,lightenButton, filterO3, filterS6, medianButton, h3Button, histogramButton2; 	
+	private JButton negativeButton, resetButton, arithmeticButton, saveButton, contrastButton
+	,lightenButton, filterO3, filterS6, medianButton, h3Button, histogramButton2; 	
 
 	private JTextField arithmeticF, medianF, splotF;
 
@@ -129,12 +123,13 @@ public class Obraz extends JFrame implements ActionListener {
 		h3Button.addActionListener(this);
 		panel.add(h3Button);
 
+		/*
 		histogramButton = new JButton("histogram");
 		histogramButton.setBounds(0, 300, 100, 30);
 		histogramButton.addActionListener(this);
 		panel.add(histogramButton);
-
-		histogramButton2 = new JButton("histogram2");
+*/
+		histogramButton2 = new JButton("histogram");
 		histogramButton2.setBounds(0, 330, 100, 30);
 		histogramButton2.addActionListener(this);
 		panel.add(histogramButton2);
@@ -232,7 +227,7 @@ public class Obraz extends JFrame implements ActionListener {
 		}
 	}
 
-	public void raleigh(int min, int max) {
+	public void raleigh(int min, int max) {//H3
 
 		int[] R = new int[256];
 		int[] G = new int[256];
@@ -337,7 +332,7 @@ public class Obraz extends JFrame implements ActionListener {
 		}
 	}
 
-	public void filtracjaNieliniowa() {
+	public void filtracjaNieliniowa() {//O3
 		int tmp, tmpR, tmpG, tmpB;
 
 		for (int i = 1; i < width - 1; i++) {
@@ -373,7 +368,7 @@ public class Obraz extends JFrame implements ActionListener {
 	int[][] w3 = { { -1, -1, 2 }, { -1, 2, -1 }, { 2, -1, -1 } };
 	int[][] w4 = { { 2, -1, -1 }, { -1, 2, -1 }, { -1, -1, 2 } };
 
-	public void splot(int v) {
+	public void splot(int v) {//S6
 		int tmp, tmpR, tmpG, tmpB;
 
 		for (int i = 1; i < width - 1; i++) {
@@ -694,10 +689,10 @@ public class Obraz extends JFrame implements ActionListener {
 		if (source == lightenButton) {
 			new PopupLighten(this);
 		}
-
+/*
 		if (source == histogramButton) {
 			generateHistogram();
-		}
+		}*/
 		if (source == histogramButton2) {
 			generateHistogram_2();
 		}
