@@ -146,12 +146,12 @@ public class Obraz extends JFrame implements ActionListener {
 		FFTButton.addActionListener(this);
 		panel.add(FFTButton);
 
-		phaseButton = new JButton("faza");
+		phaseButton = new JButton("widmo fazowe");
 		phaseButton.setBounds(0, 390, 100, 30);
 		phaseButton.addActionListener(this);
 		panel.add(phaseButton);
 
-		magnitudeButton = new JButton("modu³");
+		magnitudeButton = new JButton("widmo mocy");
 		magnitudeButton.setBounds(0, 420, 100, 30);
 		magnitudeButton.addActionListener(this);
 		panel.add(magnitudeButton);
@@ -461,7 +461,7 @@ public class Obraz extends JFrame implements ActionListener {
 	// ***********<ZAD2
 	int[][] dp = { { 1, 2, 1 }, { 2, 4, 2 }, { 1, 2, 1 } };
 	int[][] gp = { { 0, -1, 0 }, { -1, 5, -1 }, { 0, -1, 0 } };
-	int[][] dk = { { 1, 1, 1 }, { 0, 0, 0 }, { -1, -1, -1 } };
+	int[][] dk = { { 1, 1, 1 }, { 0, 0, 0 }, { -1, -1, -1 } };//detekcja krawêdzi
 	// *********ZAD2>
 
 	public void splot(int v) {// S6
